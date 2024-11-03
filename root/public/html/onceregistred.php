@@ -1,23 +1,36 @@
-<?php
-session_start();
-if(isset($_SESSION['usuario'])){
-  header("location:onceregistred.php");
-}
+<?php  
+    session_start();
+
+    if(!isset($_SESSION['usuario'])){
+        echo'
+        <script>
+        alert ("Por favor debes iniciar secion");
+        wiwndow.location="../html/index.php";
+        </script>
+        ';
+        session_destroy();
+        die();  
+    
+    }
+
+
+
 ?>
 
 
+
+
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../thirdparty/css/bootstrap.min.css">
     <script src="../thirdparty/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css"> 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
       <div class="container-fluid">
         <!-- Logo de la primera navbar -->
         <a class="navbar-brand" href="#">
@@ -26,11 +39,9 @@ if(isset($_SESSION['usuario'])){
         
         <!-- Opciones de navegación siempre visibles -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../html/register.php">Sign up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../html/login.php">log in</a>
+            <a class="nav-link" href="../../../server/daos/log_out.php">log out</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,6 +65,5 @@ if(isset($_SESSION['usuario'])){
         </form>
       </div>
     </nav>
-  </body>
-  </html>
-
+</body>
+</html>
