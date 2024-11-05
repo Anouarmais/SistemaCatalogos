@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/stylelogin.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
       <div class="container-fluid">
-        <!-- Logo de la primera navbar -->
-        <a class="navbar-brand" href="index.php">
+   
+        <a class="navbar-brand" href="onceregistred.php">
           <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
         </a>
         
-        <!-- Opciones de navegación siempre visibles -->
+   
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         
+          
           <li class="nav-item">
-            <a class="nav-link" href="../html/login.php">log in</a>
+            <a class="nav-link" href="../../../server/daos/log_out.php">log out</a>
           </li>
-         
-        
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-disabled="true" href="profile.phps">Perfil</a>
+          </li>
         </ul>
 
         <form class="d-flex" role="search">
@@ -33,7 +35,7 @@
       </div>
     </nav>
 
-    <section class="vh-100" style="background-color: #e3f2fd;">
+  <section class="vh-100" style="background-color: #e3f2fd;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
@@ -46,28 +48,33 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-               <form action="../../../server/daos/procesarRegistro.php" method="POST">
-  <div class="d-flex align-items-center mb-3 pb-1">
-    <i class="fas fa-cubes fa-2x me-3" style="color: #808080;"></i>
-  </div>
+                <form>
 
-  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up</h5>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #808080;"></i>
+                  
+                  </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="username">Usuario</label>
-    <input type="text" id="username" name="username" class="form-control form-control-lg" />
-  </div>
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up</h5>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="password">Contraseña</label>
-    <input type="password" id="password" name="password" class="form-control form-control-lg" />
-  </div>
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Username</label>
+                  </div>
 
-  <div class="pt-1 mb-4">
-    <button type="submit" class="btn btn-dark btn-lg btn-block">Enviar</button>
-  </div>
-</form>
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Password</label>
+                  </div>
 
+                  <div class="pt-1 mb-4">
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="button">Sign up</button>
+                  </div>
+
+                  
+                 
+                 
+                </form>
 
               </div>
             </div>
@@ -102,6 +109,5 @@
     <!-- Right -->
   </div>
 </section>
-</form>
 </body>
 </html>

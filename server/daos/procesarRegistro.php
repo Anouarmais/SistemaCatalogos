@@ -12,7 +12,7 @@ $query = "INSERT INTO usuarios(username, password) VALUES ('$username', '$passwo
 $ejecutar = mysqli_query($conexion, $query);
 
 if ($ejecutar) {
-    echo "Registro insertado correctamente.";
+    header("Location: ../../root/public/html/index.php");
 } else {
     echo "Error al insertar registro: " . mysqli_error($conexion);
 }

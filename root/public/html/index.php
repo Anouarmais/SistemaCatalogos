@@ -12,40 +12,26 @@ if(isset($_SESSION['usuario'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../thirdparty/css/bootstrap.min.css">
-    <script src="../thirdparty/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
       <div class="container-fluid">
         <!-- Logo de la primera navbar -->
-        <a class="navbar-brand" href="#">
-          <img src="/root/public/img/logotipo.jpg" alt="Logo" width="40" height="34">
+        <a class="navbar-brand" href="index.php">
+          <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
         </a>
         
         <!-- Opciones de navegación siempre visibles -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../html/register.php">Sign up</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="../html/login.php">log in</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>  
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
+         
+        
         </ul>
 
         <form class="d-flex" role="search">
