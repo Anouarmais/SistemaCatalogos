@@ -1,3 +1,17 @@
+<?php  
+    session_start();
+    if(!isset($_SESSION['usuario'])){
+        echo'
+        <script>
+        alert ("Por favor debes iniciar secion");
+        wiwndow.location="../html/index.php";
+        </script>
+        ';
+        session_destroy();
+        die();  
+    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +21,7 @@
     <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/stylelogin.css">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
@@ -35,56 +50,7 @@
       </div>
     </nav>
 
-  <section class="vh-100" style="background-color: #e3f2fd;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 1rem;">
-          <div class="row g-0">
-            <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="../img/registrar.webp" width="1500px"
-                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-            </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
-
-                <form>
-
-                  <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: #808080;"></i>
-                  
-                  </div>
-
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up</h5>
-
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example17">Username</label>
-                  </div>
-
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example27">Password</label>
-                  </div>
-
-                  <div class="pt-1 mb-4">
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="button">Sign up</button>
-                  </div>
-
-                  
-                 
-                 
-                </form>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
       Copyright © 2020. All rights reserved.
@@ -108,6 +74,5 @@
     </div>
     <!-- Right -->
   </div>
-</section>
 </body>
 </html>

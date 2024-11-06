@@ -41,6 +41,11 @@
           <li class="nav-item">
             <a class="nav-link " aria-disabled="true" href="profile.php">Perfil</a>
           </li>
+
+          <li class="nav-item">
+          <a class="nav-link" href="../html/formprod.php">New</a>
+        </li>
+        
         </ul>
 
         <form class="d-flex" role="search">
