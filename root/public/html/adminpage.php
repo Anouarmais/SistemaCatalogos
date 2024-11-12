@@ -1,15 +1,15 @@
 <?php  
-    session_start();
-    if(!isset($_SESSION['usuario'])){
-        echo'
-        <script>
-        alert("Por favor debes iniciar sesión");
-        window.location="index.php"; // Cambié "wiwndow" a "window"
-        </script>
-        ';
-        session_destroy();
-        die();  
-    }
+session_start();
+if (!isset($_SESSION['usuario']) || $_SESSION['admin'] != 1) {
+    echo '
+    <script>
+        alert("Acceso denegado. Solo los administradores pueden acceder a esta página.");
+        window.location.href = "../html/index.php"; // Redirige a una página pública
+    </script>
+    ';
+    session_destroy();
+    die();  
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +40,9 @@
             <a class="nav-link " aria-disabled="true" href="profile.php">Perfil</a>
           </li>
 
-
+          <li class="nav-item">
+          <a class="nav-link" href="../html/formprod.php">New</a>
+        </li>
         
         </ul>
 

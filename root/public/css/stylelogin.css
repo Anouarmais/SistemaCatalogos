@@ -1,3 +1,4 @@
+
 .divider:after,
 .divider:before {
 content: "";
@@ -11,7 +12,9 @@ background: #eee;
     width: 30% !important;
 }
 
-  
+
+
+
 .h-custom {
 height: calc(100% - 73px);
 }

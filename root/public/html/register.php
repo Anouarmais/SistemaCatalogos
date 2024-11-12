@@ -6,7 +6,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/stylelogin.css">
+    <link rel="stylesheet" href="../css/styleregister.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
@@ -46,27 +46,48 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-               <form action="../../../server/daos/procesarRegistro.php" method="POST">
-  <div class="d-flex align-items-center mb-3 pb-1">
-    <i class="fas fa-cubes fa-2x me-3" style="color: #808080;"></i>
+              <form action="../../../server/daos/procesarRegistro.php" method="POST">
+  <!-- Nombre completo -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="fullname">Nombre completo</label>
+    <input type="text" id="fullname" name="fullname" class="form-control form-control-lg" required />
   </div>
 
-  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up</h5>
+  <!-- Correo electrónico -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email" class="form-control form-control-lg" required />
+  </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
+  <!-- Usuario -->
+  <div class="form-outline mb-4">
     <label class="form-label" for="username">Usuario</label>
-    <input type="text" id="username" name="username" class="form-control form-control-lg" />
+    <input type="text" id="username" name="username" class="form-control form-control-lg" required />
   </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
+  <!-- Contraseña -->
+  <div class="form-outline mb-4">
     <label class="form-label" for="password">Contraseña</label>
-    <input type="password" id="password" name="password" class="form-control form-control-lg" />
+    <input type="password" id="password" name="password" class="form-control form-control-lg" required />
+  </div>
+
+  <!-- Ubicación -->
+  <div class="form-outline mb-4">
+    <label class="form-label">Ubicación</label>
+    <input type="text" id="ubi" name="ubicacion" class="form-control form-control-lg" required />
+  </div>
+
+  <!-- Número de teléfono -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="phone">Número de teléfono</label>
+    <input type="tel" id="phone" name="phone" class="form-control form-control-lg" />
   </div>
 
   <div class="pt-1 mb-4">
     <button type="submit" class="btn btn-dark btn-lg btn-block">Enviar</button>
   </div>
 </form>
+
 
 
               </div>

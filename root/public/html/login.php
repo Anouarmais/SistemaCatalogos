@@ -26,10 +26,7 @@
         
         </ul>
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+      
       </div>
     </nav>
     <section class="vh-100">
@@ -61,13 +58,7 @@
             <label class="form-label" for="form3Example4">Contraseña</label>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-0">
-                <input type="checkbox" class="form-check-input" id="rememberMe" />
-                <label class="form-check-label" for="rememberMe">Remember me</label>
-            </div>
-        </div>
+     
 
         <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enviar</button>
@@ -78,7 +69,9 @@
 
     </div>
   </div>
-  <div
+
+</section>
+<div
     class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
@@ -103,6 +96,5 @@
     </div>
     <!-- Right -->
   </div>
-</section>
 </body>
 </html>

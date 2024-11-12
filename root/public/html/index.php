@@ -20,7 +20,6 @@
         <li class="nav-item">
           <a class="nav-link" href="../html/login.php">Log in</a>
         </li>
-       
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -66,13 +65,11 @@
 
     <!-- Contenido principal expandible -->
     <div class="flex-grow-1 p-3">
-     
-
-      
+      <!-- Aquí iría el contenido principal de la página -->
     </div>
-  <script src="../js/ajax.js"></script>
   </div>
   
+  <script src="../js/ajax.js"></script>
 </body>
 
 </html>

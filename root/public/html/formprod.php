@@ -1,12 +1,12 @@
-<?php
+<D?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['usuario']) || $_SESSION['admin'] != 1) {
     echo '
-        <script>
-        alert ("Por favor debes iniciar secion");
-        wiwndow.location="../html/index.php";
-        </script>
-        ';
+    <script>
+        alert("Acceso denegado. Solo los administradores pueden acceder a esta página.");
+        window.location.href = "../html/index.php"; 
+    </script>
+    ';
     session_destroy();
     die();
 }
@@ -55,42 +55,50 @@ if (!isset($_SESSION['usuario'])) {
             </form>
         </div>
     </nav>
+    <div class="archivo">
+        <div class="container-form">
 
-    <div class="container-form">
-    <div class="labeltitulo">
-        <label for="">Añadir producto</label>
+            <h3>Explicación
+            </h3>
+            <p>1.Selecciona la imgen que desee adjuntar y luego pulse le botón de Añadir imagen
+            </p>
+            <p>2. Rellene el resto de campos y y pulse Añadir prducto </p>
+            <p>*Porfavor respete los pasos par aqu ese suba correctamente el producto</p>
+        </div>
     </div>
 
-    <form action="../../../server/daos/procesarprod.php" method="POST">
-        <!-- Nombre del producto -->
-        <div class="input-group mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" required>
+    <div class="container-form">
+        <div class="labeltitulo">
+            <label for="">Añadir producto</label>
         </div>
 
-        <!-- Imagen del producto (solo ruta) -->
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile" name="img" lang="es">
-            <label class="custom-file-label" for="customFile">Selecciona un archivo</label>
-            <!-- Aquí guardamos solo la ruta -->
-            <input type="hidden" id="imgPath" name="imgPath">
-        </div>
+        <form action="../../../server/daos/procesarprod.php" method="POST" enctype="multipart/form-data">
+            <div class="input-group mb-3">
+                <input type="file" name="archivo" id="archivo" required><br><br>
+            </div>
 
-        <!-- Precio del producto -->
-        <div class="input-group mb-3">
-            <input type="number" name="price" class="form-control" placeholder="Precio" aria-label="Cantidad (al dólar más cercano)" required>
-        </div>
+            <!-- Nombre del producto -->
+            <div class="input-group mb-3">
 
-        <!-- Descripción del producto -->
-        <div class="input-group">
-            <textarea name="description" class="form-control" placeholder="Descripción" aria-label="Con texto" required></textarea>
-        </div>
+                <input type="text" name="name" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" required>
+            </div>
+            <!-- Precio del producto -->
+            <div class="input-group mb-3">
+                <input type="number" name="price" class="form-control" placeholder="Precio" aria-label="Cantidad (al dólar más cercano)" required>
+            </div>
 
-        <!-- Botón para enviar -->
-        <div class="mt-3">
-            <button type="submit" class="btn btn-primary">Añadir producto</button>
-        </div>
-    </form>
-</div>
+            <!-- Descripción del producto -->
+            <div class="input-group">
+                <textarea name="description" class="form-control" placeholder="Descripción" aria-label="Con texto" required></textarea>
+            </div>
+
+            <!-- Botón para enviar -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Añadir producto</button>
+            </div>
+        </form>
+
+    </div>
 
 
 
