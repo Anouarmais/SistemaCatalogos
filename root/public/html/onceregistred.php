@@ -19,6 +19,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/styleprod.css">
 
 </head>
 <body>
@@ -50,5 +51,16 @@
         </form>
       </div>
     </nav>
+
+    <div class="d-flex" style="height: calc(100vh - 56px);">
+    <!-- Barra lateral -->
+
+
+    <!-- Contenido principal expandible -->
+    <div class="flex-grow-1 p-3">
+      <!-- Aquí iría el contenido principal de la página -->
+    </div>
+  </div>
+  <script src="../js/ajax.js"></script>
 </body>
 </html>

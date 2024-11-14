@@ -1,0 +1,10 @@
+.flex-grow-1.p-3 {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los productos se ajusten si hay demasiados para una fila */
+    gap: 20px; /* Espacio entre los productos */
+    justify-content: space-around; /* Alinea los productos y les da un poco de espacio alrededor */
+}
+
+.card {
+    margin-bottom: 20px; /* Espacio en la parte inferior de cada tarjeta */
+}
