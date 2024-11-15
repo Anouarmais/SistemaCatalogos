@@ -1,10 +1,37 @@
 .flex-grow-1.p-3 {
-    display: flex;
-    flex-wrap: wrap; /* Asegura que los productos se ajusten si hay demasiados para una fila */
+    display: flex !important;
+    flex-wrap: wrap !important; /* Asegura que los productos se ajusten si hay demasiados para una fila */
     gap: 20px; /* Espacio entre los productos */
     justify-content: space-around; /* Alinea los productos y les da un poco de espacio alrededor */
 }
 
 .card {
-    margin-bottom: 20px; /* Espacio en la parte inferior de cada tarjeta */
+    flex: 0 1 calc(33.33% - 20px); /* Ocupa un tercio del ancho, considerando el gap */
+    margin:0;
+}
+
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.col-xl-5 {
+    flex: 0 0 auto;
+    width: 30% !important;
+}
+
+
+
+
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
 }

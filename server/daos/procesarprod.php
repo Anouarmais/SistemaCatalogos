@@ -21,15 +21,19 @@ $price = mysqli_real_escape_string($conexion, $price);
 $description = mysqli_real_escape_string($conexion, $description);
 $img = mysqli_real_escape_string($conexion, (string) $img);
 
-// Asegúrate de que la ruta de la imagen no esté vacía
+
 if (empty($img)) {
-    $img = null; // O puedes asignar una imagen por defecto si lo prefieres
+    $img = null; 
 }
 
 // Consulta para insertar los datos en la base de datos
 $query = "INSERT INTO products (name, price, description, img) VALUES ('$name', '$price', '$description', '$img')";
 
 // Ejecutar la consulta
-$ejecutar = mysqli_query($conexion, $query);
+if($ejecutar = mysqli_query($conexion, $query)
+){
+    header("Location: ../../root/public/html/adminpage.php");
+
+}
 
 

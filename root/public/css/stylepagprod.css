@@ -12,13 +12,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
 .container-title {
 	padding: 30px;
 	background-color: #eee;
@@ -35,16 +28,18 @@ main {
 
 }
 .container-img {
+	
     background-color: #f7f7f9;
-    flex: 1;  /* Se asegura de que el contenedor ocupe un 100% del espacio disponible en su contenedor principal */
-    margin-left: 10px;
+    flex: 0;  /* Se asegura de que el contenedor ocupe un 100% del espacio disponible en su contenedor principal */
+    margin-left: 100px;
     display: flex; /* Hacemos que el contenedor use el modelo flexbox */
     justify-content: center; /* Centra la imagen horizontalmente */
     align-items: center; /* Centra la imagen verticalmente si es necesario */
+	
 }
 
-.imgprod .img {
-    width: 100%; /* La imagen ocupa el 100% del contenedor */
+.imgprod .imgprod {
+    width: 50% !important; /* La imagen ocupa el 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     max-width: 100%; /* Garantiza que la imagen no exceda el ancho del contenedor */
 }

@@ -24,7 +24,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-      <div class="container-fluid">
+      <div class="container">
    
         <a class="navbar-brand" href="onceregistred.php">
           <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
@@ -52,15 +52,18 @@
       </div>
     </nav>
 
-    <div class="d-flex" style="height: calc(100vh - 56px);">
-    <!-- Barra lateral -->
-
+  
+  
 
     <!-- Contenido principal expandible -->
+     <div class="container">
+
+     
     <div class="flex-grow-1 p-3">
       <!-- Aquí iría el contenido principal de la página -->
     </div>
-  </div>
+    </div>
+  
   <script src="../js/ajax.js"></script>
 </body>
 </html>

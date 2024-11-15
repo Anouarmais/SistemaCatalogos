@@ -7,23 +7,34 @@ $password = $_POST['password'];
 
 // Sanitizar entradas
 $username = mysqli_real_escape_string($conexion, $username);
-$password = mysqli_real_escape_string($conexion, $password);
 
-// Consulta que obtiene el campo admin también
-$validar_login = mysqli_query($conexion, "SELECT username, admin FROM usuarios WHERE username = '$username' AND password = '$password'");
+// Consulta que obtiene la contraseña y el campo admin
+$validar_login = mysqli_query($conexion, "SELECT password, admin FROM usuarios WHERE username = '$username'");
 
 if (mysqli_num_rows($validar_login) > 0) {
     $usuario = mysqli_fetch_assoc($validar_login);
-    $_SESSION['usuario'] = $username;
-    $_SESSION['admin'] = $usuario['admin']; // Guardar el valor admin en la sesión
+    $hashed_password = $usuario['password'];
 
-    // Redirigir según el valor de admin
-    if ($usuario['admin'] == 1) {
-        header("Location: ../../root/public/html/adminpage.php");
+    // Verificar la contraseña
+    if (password_verify($password, $hashed_password)) {
+        $_SESSION['usuario'] = $username;
+        $_SESSION['admin'] = $usuario['admin']; // Guardar el valor admin en la sesión
+
+        // Redirigir según el valor de admin
+        if ($usuario['admin'] == 1) {
+            header("Location: ../../root/public/html/adminpage.php");
+        } else {
+            header("Location: ../../root/public/html/onceregistred.php");
+        }
+        exit;
     } else {
-        header("Location: ../../root/public/html/onceregistred.php");
+        echo '
+        <script>
+            alert("Contraseña incorrecta.");
+            window.location.href = "../../root/public/html/login.php";
+        </script>
+        ';
     }
-    exit;
 } else {
     echo '
     <script>
@@ -31,5 +42,5 @@ if (mysqli_num_rows($validar_login) > 0) {
         window.location.href = "../../root/public/html/login.php";
     </script>
     ';
-    exit;
 }
+
