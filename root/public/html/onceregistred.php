@@ -10,6 +10,60 @@
         session_destroy();
         die();  
     }
+
+
+// Verifica si hay una sesión iniciada
+if (isset($_SESSION['usuario'])) {
+  // Verifica si es un administrador
+  if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+      // Barra de navegación para administradores
+      echo '
+      <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="onceregistred.php">
+                  <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
+              </a>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../server/daos/log_out.php">Log out</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="profile.php">Perfil</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../html/formprod.php">New</a>
+                  </li>
+              </ul>
+              <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+          </div>
+      </nav>';
+  } else {
+      // Barra de navegación para usuarios normales
+      echo '
+      <nav class="navbar navbar-expand-lg" style="background-color: #f8f9fa;">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index.php">
+                  <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
+              </a>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../server/daos/log_out.php">Log out</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="profile.php">Perfil</a>
+                  </li>
+              </ul>
+              <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+          </div>
+      </nav>';
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +77,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+<!--<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
       <div class="container">
    
         <a class="navbar-brand" href="onceregistred.php">
@@ -50,7 +104,7 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
-    </nav>
+    </nav>-->
 
   
   

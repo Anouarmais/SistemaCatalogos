@@ -12,6 +12,55 @@ if (!isset($_SESSION['usuario'])) {
     die();  
 }
 
+// Verifica si hay una sesión iniciada
+if (isset($_SESSION['usuario'])) {
+    // Verifica si es un administrador
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+        // Barra de navegación para administradores
+        echo '
+        <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="onceregistred.php">
+                    <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
+                </a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../server/daos/log_out.php">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.php">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/formprod.php">New</a>
+                    </li>
+                </ul>
+             
+            </div>
+        </nav>';
+    } else {
+        // Barra de navegación para usuarios normales
+        echo '
+        <nav class="navbar navbar-expand-lg" style="background-color: #f8f9fa;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php">
+                    <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
+                </a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../server/daos/log_out.php">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.php">Perfil</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>';
+    }
+}
 
 ?>
 
@@ -55,10 +104,14 @@ body {
     font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
 }
 
-/*=====================================
-estilos de la utilidad
-Copiar esto
-=====================================*/
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 90px;
+
+}
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario {
     display: flex;
@@ -82,12 +135,7 @@ Copiar esto
     height: 17rem;
     background-image: linear-gradient(45deg, #BC3CFF, #317FFF);
     border-radius: 0 0 20px 20px;
-    /*
-    background-image: url('http://localhost/multimedia/png/user-portada-3.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    */
+
 }
 
 .seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
@@ -259,31 +307,7 @@ Copiar esto
 }
 </style>
 
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-      <div class="container-fluid">
-   
-        <a class="navbar-brand" href="index.php">
-          <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
-        </a>
-        
-   
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-          <li class="nav-item">
-            <a class="nav-link" href="../../../server/daos/log_out.php">log out</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " aria-disabled="true" href="profile.php">Perfil</a>
-          </li>
-        </ul>
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
 
 
 

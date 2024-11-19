@@ -49,23 +49,9 @@ if (!isset($_SESSION['usuario']) || $_SESSION['admin'] != 1) {
 
             </ul>
 
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
         </div>
     </nav>
-    <div class="archivo">
-        <div class="container-form">
 
-            <h3>Explicación
-            </h3>
-            <p>1.Selecciona la imgen que desee adjuntar y luego pulse le botón de Añadir imagen
-            </p>
-            <p>2. Rellene el resto de campos y y pulse Añadir prducto </p>
-            <p>*Porfavor respete los pasos par aqu ese suba correctamente el producto</p>
-        </div>
-    </div>
 
     <div class="container-form">
         <div class="labeltitulo">

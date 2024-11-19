@@ -10,10 +10,12 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-      <div class="container-fluid">
+      <div class="container-fluid"  ;
+      >
         <!-- Logo de la primera navbar -->
         <a class="navbar-brand" href="index.php">
-          <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
+          <img src="../img/logotipo.jpg" alt="Logo"      margin-left="90px" ;
+          width="40" height="34">
         </a>
         
         <!-- Opciones de navegación siempre visibles -->
