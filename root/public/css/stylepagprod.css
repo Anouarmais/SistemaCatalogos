@@ -14,7 +14,6 @@ body {
 
 .container-title {
 	padding: 30px;
-	background-color: #eee;
 	margin-bottom: 50px;
 	color: #222;
  
@@ -29,7 +28,6 @@ main {
 }
 .container-img {
 	
-    background-color: #f7f7f9;
     flex: 0;  /* Se asegura de que el contenedor ocupe un 100% del espacio disponible en su contenedor principal */
     margin-left: 100px;
     display: flex; /* Hacemos que el contenedor use el modelo flexbox */

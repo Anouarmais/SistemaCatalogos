@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'coneccion.php'; // Asegúrate de que la ruta sea correcta
+include 'coneccion.php'; 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }

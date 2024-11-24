@@ -4,7 +4,6 @@ const btnDecrement = document.querySelector('#decrement');
 
 let valueByDefault = parseInt(inputQuantity.value);
 
-// Funciones Click
 
 btnIncrement.addEventListener('click', () => {
 	valueByDefault += 1;
@@ -19,8 +18,7 @@ btnDecrement.addEventListener('click', () => {
 	inputQuantity.value = valueByDefault;
 });
 
-// Toggle
-// Constantes Toggle Titles
+
 const toggleDescription = document.querySelector(
 	'.title-description'
 );
@@ -29,7 +27,6 @@ const toggleAdditionalInformation = document.querySelector(
 );
 const toggleReviews = document.querySelector('.title-reviews');
 
-// Constantes Contenido Texto
 const contentDescription = document.querySelector(
 	'.text-description'
 );
@@ -38,7 +35,6 @@ const contentAdditionalInformation = document.querySelector(
 );
 const contentReviews = document.querySelector('.text-reviews');
 
-// Funciones Toggle
 toggleDescription.addEventListener('click', () => {
 	contentDescription.classList.toggle('hidden');
 });

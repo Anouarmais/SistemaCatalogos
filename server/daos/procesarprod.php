@@ -32,7 +32,7 @@ $query = "INSERT INTO products (name, price, description, img) VALUES ('$name', 
 // Ejecutar la consulta
 if($ejecutar = mysqli_query($conexion, $query)
 ){
-    header("Location: ../../root/public/html/adminpage.php");
+    header("Location: ../../root/public/html/onceregistred.php");
 
 }
 

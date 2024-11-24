@@ -22,7 +22,7 @@ if (mysqli_num_rows($validar_login) > 0) {
 
         // Redirigir según el valor de admin
         if ($usuario['admin'] == 1) {
-            header("Location: ../../root/public/html/adminpage.php");
+            header("Location: ../../root/public/html/onceregistred.php");
         } else {
             header("Location: ../../root/public/html/onceregistred.php");
         }

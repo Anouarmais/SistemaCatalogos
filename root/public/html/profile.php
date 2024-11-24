@@ -38,7 +38,6 @@ if (isset($_SESSION['usuario'])) {
             </div>
         </nav>';
     } else {
-        // Barra de navegación para usuarios normales
         echo '
         <nav class="navbar navbar-expand-lg" style="background-color: #f8f9fa;">
             <div class="container-fluid">
@@ -53,10 +52,7 @@ if (isset($_SESSION['usuario'])) {
                         <a class="nav-link" href="profile.php">Perfil</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+              
             </div>
         </nav>';
     }
@@ -70,7 +66,7 @@ if (isset($_SESSION['usuario'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apock web design</title>
+    
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
@@ -124,7 +120,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(#B873FF, transparent);
+    background: linear-gradient(#00ffff, transparent);
     margin-bottom: 1.25rem;
 }
 
@@ -133,7 +129,7 @@ body {
     position: relative;
     width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, #BC3CFF, #317FFF);
+    background-image: linear-gradient(45deg, #00ffff, #317FFF);
     border-radius: 0 0 20px 20px;
 
 }
@@ -341,12 +337,6 @@ body {
 </section>
 
 
-    <!--====  End of html  ====-->
-
-<!--=============================
-redes sociales fijadas en pantalla
-No es necesario que copies esto!
-==============================-->
 <style>
 .mensaje a {
     color: inherit;
