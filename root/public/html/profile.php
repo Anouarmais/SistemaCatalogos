@@ -33,7 +33,15 @@ if (isset($_SESSION['usuario'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="../html/formprod.php">New</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../html/panelusuarios.php">usuarios</a>
+                    </li>
                 </ul>
+                 <form class="d-flex" role="search">
+                            <button class="btn btn-outline-primary bolsa" type="button">Cesta</button>
+
+                
+              </form>
              
             </div>
         </nav>';
@@ -52,6 +60,11 @@ if (isset($_SESSION['usuario'])) {
                         <a class="nav-link" href="profile.php">Perfil</a>
                     </li>
                 </ul>
+                    <form class="d-flex" role="search">
+                            <button class="btn btn-outline-primary bolsa" type="button">Cesta</button>
+
+                
+              </form>
               
             </div>
         </nav>';
@@ -66,7 +79,7 @@ if (isset($_SESSION['usuario'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="../css/styleprod.css">
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
@@ -303,6 +316,27 @@ body {
 }
 </style>
 
+<div class="carrito" >
+  <div class="arriba">
+    <h3>Tu carrito está vacío</h3>
+    <p>Compra ahora</p>
+  </div>
+  <table>
+    <tbody></tbody>
+  </table>
+  <div class="abajo">
+    <div class="precios">
+      <p>Total</p>
+      <p id="precio">1520.2</p>
+    </div>
+    <div class="botones">
+      <button>Comprar</button>
+      <button>Vaciar Cesta</button>
+    </div>
+  </div>
+
+</div>
+
 
 
 
@@ -348,6 +382,7 @@ body {
     transform: scale(1.4)
 }
 </style>
+<script src="../js/ajax.js"></script>
 
 </body>
 

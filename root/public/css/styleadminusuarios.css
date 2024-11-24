@@ -1,0 +1,25 @@
+.registrados{
+    margin: 50px;
+}
+.registrados h1{
+    margin-bottom: 30px;
+}
+.usuarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.usuario-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.usuario-info {
+    display: flex;
+    gap: 10px;
+}

@@ -33,8 +33,15 @@ if (isset($_SESSION['usuario'])) {
                   <li class="nav-item">
                       <a class="nav-link" href="../html/formprod.php">New</a>
                   </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="../html/panelusuarios.php">usuarios</a>
+                    </li>
+                
               </ul>
+
               <form class="d-flex" role="search">
+                            <button class="btn btn-outline-primary bolsa" type="button">Cesta</button>
+
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
@@ -56,10 +63,13 @@ if (isset($_SESSION['usuario'])) {
                       <a class="nav-link" href="profile.php">Perfil</a>
                   </li>
               </ul>
+                    
               <form class="d-flex" role="search">
+              <button class="btn btn-outline-primary bolsa" type="button">Cesta</button>
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
+        
           </div>
       </nav>';
   }
@@ -74,9 +84,30 @@ if (isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../thirdparty/web bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/styleprod.css">
+    
 
 </head>
 <body>
+<div class="carrito" >
+  <div class="arriba">
+    <h3>Tu carrito está vacío</h3>
+    <p>Compra ahora</p>
+  </div>
+  <table>
+    <tbody></tbody>
+  </table>
+  <div class="abajo">
+    <div class="precios">
+      <p>Total</p>
+      <p id="precio">1520.2</p>
+    </div>
+    <div class="botones">
+      <button>Comprar</button>
+      <button>Vaciar Cesta</button>
+    </div>
+  </div>
+
+</div>
 
   
   
