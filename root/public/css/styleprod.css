@@ -22,6 +22,17 @@
 .arriba p{
     font-size: 15px;
 }
+.footer {
+    position: fixed; 
+    bottom: 0;       
+    width: 100%;     
+    padding: 10px 0;
+    background-color: #007bff; 
+    color: white;       
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 10;
+}
+
 .carrito table {
     width: 100%;
     height: 150px;
@@ -60,6 +71,7 @@ align-items: center;
 /* Ajustes específicos para el botón en la navbar */
 .navbar .bolsa {
     margin-right: 15px !important;
+    margin-right: 150px !important;
 }
 
 .bolsa{
@@ -184,7 +196,8 @@ align-items: center;
 }
 
 .imgprod img{
-    max-width: 300px !important;
+    max-width: 200px !important;
+;
 }
 
 .divider:after,

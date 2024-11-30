@@ -2,45 +2,45 @@
 session_start();
 include 'coneccion.php';
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// Sanitizar entradas
-$username = mysqli_real_escape_string($conexion, $username);
+    $username = mysqli_real_escape_string($conexion, $username);
 
-// Consulta que obtiene la contraseña y el campo admin
-$validar_login = mysqli_query($conexion, "SELECT password, admin FROM usuarios WHERE username = '$username'");
+    $validar_login = mysqli_query($conexion, "SELECT password, admin FROM usuarios WHERE username = '$username'");
 
-if (mysqli_num_rows($validar_login) > 0) {
-    $usuario = mysqli_fetch_assoc($validar_login);
-    $hashed_password = $usuario['password'];
+    if (mysqli_num_rows($validar_login) > 0) {
+        $usuario = mysqli_fetch_assoc($validar_login);
+        $hashed_password = $usuario['password'];
 
-    // Verificar la contraseña
-    if (password_verify($password, $hashed_password)) {
-        $_SESSION['usuario'] = $username;
-        $_SESSION['admin'] = $usuario['admin']; // Guardar el valor admin en la sesión
+        if (password_verify($password, $hashed_password)) {
+            $_SESSION['usuario'] = $username;
+            $_SESSION['admin'] = $usuario['admin']; 
 
-        // Redirigir según el valor de admin
-        if ($usuario['admin'] == 1) {
-            header("Location: ../../root/public/html/onceregistred.php");
+            
+                setcookie('username', $username, time() + 3600 * 24 * 30, "/");
+            
+
+            if ($usuario['admin'] == 1) {
+                header("Location: ../../root/public/html/onceregistred.php");
+            } else {
+                header("Location: ../../root/public/html/onceregistred.php");
+            }
+            exit;
         } else {
-            header("Location: ../../root/public/html/onceregistred.php");
+            $_SESSION['error_message'] = "Incorrect Password.";
+            header("Location: ../../root/public/html/login.php");
+            exit;
         }
-        exit;
     } else {
-        echo '
-        <script>
-            alert("Contraseña incorrecta.");
-            window.location.href = "../../root/public/html/login.php";
-        </script>
-        ';
+        $_SESSION['error_message'] = "Usuario not exists.";
+        header("Location: ../../root/public/html/login.php");
+        exit;
     }
 } else {
-    echo '
-    <script>
-        alert("Usuario no existe.");
-        window.location.href = "../../root/public/html/login.php";
-    </script>
-    ';
+    $_SESSION['error_message'] = "Please enter your username and password.";
+    header("Location: ../../root/public/html/login.php");
+    exit;
 }
-
+?>

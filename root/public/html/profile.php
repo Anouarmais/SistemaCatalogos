@@ -18,54 +18,50 @@ if (isset($_SESSION['usuario'])) {
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
         // Barra de navegación para administradores
         echo '
-        <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+             <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="onceregistred.php">
                     <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
                 </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
                     <li class="nav-item">
+                        <a class="nav-link" href="profile.php">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/formprod.php">New Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/panelusuarios.php">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/basket.php">Basket</a>
+                    </li>
+                        <li class="nav-item">
                         <a class="nav-link" href="../../../server/daos/log_out.php">Log out</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.php">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/formprod.php">New</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="../html/panelusuarios.php">usuarios</a>
-                    </li>
                 </ul>
-                 <form class="d-flex" role="search">
-                            <button class="btn btn-outline-primary bolsa" type="button">Cesta</button>
-
-                
-              </form>
-             
             </div>
         </nav>';
     } else {
         echo '
-        <nav class="navbar navbar-expand-lg" style="background-color: #f8f9fa;">
+         <nav class="navbar navbar-expand-lg" style="background-color: #f8f9fa; ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
                     <img src="../img/logotipo.jpg" alt="Logo" width="40" height="34">
                 </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
                     <li class="nav-item">
+                        <a class="nav-link" href="profile.php">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/basket.php">Basket</a>
+                    </li>
+                     <li class="nav-item">
                         <a class="nav-link" href="../../../server/daos/log_out.php">Log out</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.php">Perfil</a>
-                    </li>
                 </ul>
-                    <form class="d-flex" role="search">
-                            <button class="btn btn-outline-primary bolsa" type="button">Cesta</button>
-
-                
-              </form>
-              
             </div>
         </nav>';
     }
@@ -141,7 +137,7 @@ body {
     display: block;
     position: relative;
     width: 90%;
-    height: 17rem;
+    height: 10rem;
     background-image: linear-gradient(45deg, #00ffff, #317FFF);
     border-radius: 0 0 20px 20px;
 
@@ -166,7 +162,7 @@ body {
 .seccion-perfil-usuario .perfil-usuario-avatar {
     display: flex;
     width: 180px;
-    height: 180px;
+    height: 10px;
     align-items: center;
     justify-content: center;
     border: 7px solid #FFFFFF;
@@ -286,7 +282,7 @@ body {
     background: linear-gradient(45deg, #FF2DFD, #40A7FF);
 }
 
-/* adactacion a dispositivos */
+
 @media (max-width: 750px) {
     .seccion-perfil-usuario .lista-datos {
         width: 100%;
@@ -345,12 +341,7 @@ body {
     <section class="seccion-perfil-usuario">
     <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
-            <div class="perfil-usuario-avatar">
-                <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">
-                <button type="button" class="boton-avatar">
-                    <i class="far fa-image"></i>
-                </button>
-            </div>
+           
         </div>
     </div>
     <div class="perfil-usuario-body">
@@ -369,7 +360,11 @@ body {
         </div>
     </div>
 </section>
-
+<footer class="footer bg-primary text-white text-center py-3">
+    <div class="container">
+        <p class="mb-0">Copyright © 2020. All rights reserved.</p>
+    </div>
+</footer>
 
 <style>
 .mensaje a {
