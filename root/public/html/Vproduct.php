@@ -181,7 +181,7 @@ mysqli_close($conexion);
         event.preventDefault(); 
 
         <?php if (!isset($_SESSION['usuario'])): ?>
-            alert("¡Debes iniciar sesión para comentar!"); 
+            alert("¡Must be loged!"); 
         <?php else: ?>
          
             const formData = new FormData(this); 
